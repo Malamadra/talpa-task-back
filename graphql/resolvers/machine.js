@@ -3,17 +3,13 @@ import machinesSensorsLoader from 'graphql/loaders/machinesSensorsLoader'
 
 export default {
   Query: {
-    machine: async (_, { id }) =>
-      fakeMachines.find(machine => id === machine.id),
-    machines: () => {
-      return fakeMachines
-    }
+    machine: (_, { id }) => fakeMachines.find(machine => id === machine.id),
+    machines: () => fakeMachines
   },
   Machine: {
-    sensors: async (parent, params) =>
+    sensors: async parent =>
       machinesSensorsLoader.load({
-        parent,
-        params
+        parent
       })
   }
 }

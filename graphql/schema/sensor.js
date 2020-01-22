@@ -2,7 +2,7 @@ import { gql } from 'apollo-server-express'
 
 export default gql`
   type Query {
-    sensor(id: ID!, from: Int, to: Int): [Sensor]
+    sensorData(sensorId: ID!, from: Float, to: Float): [SensorDataPoint]
   }
 
   type Sensor {
@@ -14,7 +14,7 @@ export default gql`
 
   type SensorDataPoint {
     id: ID!
-    timestamp: String!
+    timestamp: Float!
     value: Float!
   }
 `
