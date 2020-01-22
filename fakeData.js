@@ -1,5 +1,4 @@
 import faker from 'faker'
-import { getTime } from 'date-fns'
 
 export const fakeMachines = Array(10)
   .fill(null)
@@ -19,14 +18,16 @@ export const fakeSensors = fakeMachines.reduce((acc, { id: machineId }) => {
       const data = Array(10)
         .fill(null)
         .map(() => ({
-          timestamp: getTime(faker.date.past()),
+          id: faker.random.uuid(),
+          timestamp: faker.date.past(),
           value: faker.random.number()
         }))
 
       return {
         id: faker.random.uuid(),
         machineId,
-        data
+        data,
+        name: faker.internet.userName()
       }
     })
 

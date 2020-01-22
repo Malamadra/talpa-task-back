@@ -1,3 +1,9 @@
+import { fakeSensors } from 'fakeData'
+
 export default {
-  Query: {}
+  Query: {
+    sensor: (_, { id }) => {
+
+    },
+  }
 }
