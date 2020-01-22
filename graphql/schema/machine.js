@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server-express'
 
 export default gql`
- type Query {
-     test: Int
- }
+  type Query {
+    test: Int
+  }
 `
