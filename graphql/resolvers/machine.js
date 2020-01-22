@@ -1,3 +1,14 @@
+import { fakeMachines } from 'fakeData'
+
 export default {
-  Query: {}
+  Query: {
+    machine: (_, { id }) => {
+      const machine = fakeMachines.find(machine => id === machine.id)
+
+      return {
+        sensors: [],
+        ...machine
+      }
+    }
+  }
 }

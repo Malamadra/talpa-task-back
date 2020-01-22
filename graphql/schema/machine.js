@@ -7,8 +7,8 @@ export default gql`
   }
 
   type GPSPosition {
-    Latitude: Float!
-    Longitude: Float!
+    latitude: Float!
+    longitude: Float!
   }
 
   type Machine {
