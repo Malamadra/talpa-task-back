@@ -23,7 +23,6 @@ export const fakeSensors = fakeMachines.reduce((acc, { id: machineId }) => {
           timestamp: getTime(faker.date.past()),
           value: faker.random.number()
         }))
-        .sort((a, b) => b.timestamp - a.timestamp)
 
       return {
         id: faker.random.uuid(),
